@@ -1,8 +1,7 @@
 import React, {useState} from "react";
 import nlp from "compromise"
-import {quoteData} from "./Data.js"
-import {nounData} from "./Data.js"
-import "./App.css";
+import {quoteData} from "../Data.js"
+import {nounData} from "../Data.js"
 
 const nounList = (nounData)[0];
 let doc = ""
@@ -19,7 +18,7 @@ console.log(doc)
 return doc.text()
 }
 
-export const Quote = ({ body, author }) => {
+export const QuoteCard = ({ body, author }) => {
     doc = nlp(`${body}`).nouns().out('array')
     console.log(doc)
   if (!body) return <div />;
