@@ -1,15 +1,17 @@
-import React from "react";
-import {Route} from "react-router-dom"
-import { QuoteCard } from "./quotes/Quotes";
+import React from "react"
+import { Route } from "react-router-dom"
+import {QuoteCard} from "./quotes/Quotes"
+import {QuoteProvider} from "./quotes/QuoteProvider"
 
 export const ApplicationViews= () => {
   return (
     <>
-
-        <QuoteCard />
-
+      <QuoteProvider>
+        <Route exact path="/">
+            <QuoteCard />
+        </Route>
+      </QuoteProvider>
     </>
   );
 }
 
-export default ApplicationViews;

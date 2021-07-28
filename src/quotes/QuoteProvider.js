@@ -10,19 +10,20 @@ export const QuoteContext = React.createContext()
  This component establishes what data can be used.
  */
 export const QuoteProvider = (props) => {
-    const [quotes, setQuote] = useState([])
+    const [quote, setQuote] = useState({})
 
-    
 
-    const getQuote = () => {
-        return fetch("http://localhost:8088/quotes")
+
+    const getQuote = (id) => {
+        return fetch(`http://localhost:8088/quotes/${id}`)
             .then(res => res.json())
             .then(setQuote)
     }
 
+
     return (
         <QuoteContext.Provider value={{
-            quotes, getQuote, setQuote
+            quote, getQuote, setQuote
         }}>
             {props.children}
         </QuoteContext.Provider>
