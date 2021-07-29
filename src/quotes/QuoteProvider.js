@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import nlp from "compromise"
 
 /*
     The context is imported and used by individual components
@@ -18,8 +19,10 @@ export const QuoteProvider = (props) => {
         return fetch(`http://localhost:8088/quotes/${id}`)
             .then(res => res.json())
             .then(setQuote)
-    }
-
+                
+            }
+            
+        
 
     return (
         <QuoteContext.Provider value={{
@@ -28,4 +31,4 @@ export const QuoteProvider = (props) => {
             {props.children}
         </QuoteContext.Provider>
     )
-}
+    }
