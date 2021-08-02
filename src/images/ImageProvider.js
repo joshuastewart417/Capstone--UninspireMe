@@ -10,7 +10,7 @@ export const ImageProvider = (props) => {
 
 
     const getImages = (id) => {
-        return fetch(`http://localhost:8088/images/${id}`)
+        return fetch("http://localhost:8088/images/4")
         .then(res => res.json())
         .then(setImage)
     }
