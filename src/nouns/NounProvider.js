@@ -21,23 +21,17 @@ export const NounProvider = (props) => {
             
     }
 
-
-
-
-    const filterNoun = (arr) => {
-        const getRandomNoun = Math.floor(Math.random() * arr.length)
-        const randomNoun = arr[getRandomNoun]
+    const getRandomNoun = (arr) => {
+        const nounIndex = Math.floor(Math.random() * arr.length)
+        const randomNoun = arr[nounIndex]
         return randomNoun
-    }
+      }
+      
 
-    const replaceNoun = () => {
-    // nlp(doc).replaceWith(filterNoun(nounList), {keepTags:true}).text()
-    // console.log(doc)
-    // return doc.text()
-    }
+
 
     return (
-        <NounContext.Provider value={{nouns, getNouns, filterNoun, replaceNoun}}>
+        <NounContext.Provider value={{nouns, getNouns, getRandomNoun}}>
             {props.children}
         </NounContext.Provider>
     )
